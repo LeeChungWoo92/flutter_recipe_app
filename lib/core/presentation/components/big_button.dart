@@ -49,13 +49,11 @@ class _BigButtonState extends State<BigButton> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: 114,
-              child: Text(
-                widget.text,
-                style: TextStyles.normalTextBold.copyWith(color: Colors.white), //런타임에 복사
-              ),
+            Text(
+              widget.text,
+              style: TextStyles.normalTextBold.copyWith(color: Colors.white), //런타임에 복사
             ),
+            const SizedBox(width: 10),
             const Icon(
               Icons.arrow_forward,
               size: 20,
