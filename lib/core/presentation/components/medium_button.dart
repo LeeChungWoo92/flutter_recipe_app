@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipe_app/ui/color_styles.dart';
 
+import '../../../ui/color_styles.dart';
 import '../../../ui/text_styles.dart';
 
 class MediumButton extends StatefulWidget {
@@ -8,10 +8,10 @@ class MediumButton extends StatefulWidget {
   final void Function() onPressed;
 
   const MediumButton(
-    this.text, {
-    super.key,
-    required this.onPressed,
-  });
+      this.text, {
+        super.key,
+        required this.onPressed,
+      });
 
   @override
   State<MediumButton> createState() => _MediumButtonState();
@@ -32,7 +32,6 @@ class _MediumButtonState extends State<MediumButton> {
         setState(() {
           isPressed = false;
         });
-
         widget.onPressed();
       },
       onTapCancel: () {
@@ -49,18 +48,16 @@ class _MediumButtonState extends State<MediumButton> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: 114,
-              child: Text(
-                widget.text,
-                style: TextStyles.normalTextBold.copyWith(color: Colors.white), //런타임에 복사
-              ),
+            Text(
+              widget.text,
+              style: TextStyles.normalTextBold.copyWith(color: Colors.white),
             ),
+            const SizedBox(width: 11),
             const Icon(
               Icons.arrow_forward,
               size: 20,
               color: Colors.white,
-            ),
+            )
           ],
         ),
       ),
