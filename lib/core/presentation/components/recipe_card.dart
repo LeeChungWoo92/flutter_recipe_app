@@ -97,13 +97,17 @@ class RecipeCard extends StatelessWidget {
                 color: ColorStyles.secondary20,
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.star,
                     color: ColorStyles.rating,
                     size: 12,
                   ),
-                  Text(recipe.rating.toString())
+                  Text(
+                    recipe.rating.toString(),
+                    style: TextStyles.smallerTextRegular,
+                  )
                 ],
               ),
             ),
