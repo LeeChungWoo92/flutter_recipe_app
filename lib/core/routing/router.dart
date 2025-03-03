@@ -8,10 +8,17 @@ import '../../domain/model/recipe.dart';
 import '../../domain/use_case/get_saved_recipes_use_case.dart';
 import '../../presentation/saved_recipes/saved_recipes_screen.dart';
 import '../../presentation/sign_in/sign_in_screen.dart';
+import '../../presentation/sign_up/sign_up_screen.dart';
 
 final router = GoRouter(
   initialLocation: '/Splash',
   routes: [
+    GoRoute(
+      path: '/SignUp',
+      builder: (context, state) => SignUpScreen(
+        onTapSignIn: () => context.go('/SignIn'),
+      ),
+    ),
     GoRoute(
       path: '/Splash',
       builder: (context, state) => SplashScreen(
@@ -20,7 +27,10 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/SignIn',
-      builder: (context, state) => const SignInScreen(),
+      builder: (context, state) => SignInScreen(
+        onTapSignUp: () => context.go('/SignUp'),
+        onTapSignIn: () => context.go('/SavedRecipes'),
+      ),
     ),
     GoRoute(
       path: '/SavedRecipes',
