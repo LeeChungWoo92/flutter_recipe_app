@@ -14,7 +14,9 @@ final router = GoRouter(
   routes: [
     GoRoute(
       path: '/Splash',
-      builder: (context, state) => const SplashScreen(),
+      builder: (context, state) => SplashScreen(
+        onTapStartCooking: () => context.go('/SignIn'),
+      ),
     ),
     GoRoute(
       path: '/SignIn',
